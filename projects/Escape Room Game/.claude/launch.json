@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "escape-room",
+      "runtimeExecutable": "ruby",
+      "runtimeArgs": ["-run", "-e", "httpd", "--", "-p", "3456", "/Users/lore/Desktop/INT 1/Escape Room Game"],
+      "port": 3456
+    }
+  ]
+}

@@ -2,107 +2,224 @@
 <html>
   <head>
     <title>Lore's Interactive Site</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=IM+Fell+English:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="utf-8" />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+        background-color: #0a0a2e;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        color: #fffacd;
+      }
+
+      #page {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      #night-sky {
+        flex: 0 0 40%;
+        position: relative;
+        overflow: hidden;
+        background-color: #0a0a2e;
+      }
+
+      .star {
+        position: absolute;
+        color: #fffacd;
+        line-height: 1.1;
+        white-space: pre;
+        font-family: monospace;
+      }
+
+      #container {
+        padding: 12px 28px 18px;
+        flex-shrink: 0;
+      }
+
+      pre {
+        color: #fffacd;
+        margin: 0 0 24px;
+        font-size: 0.75em;
+      }
+
+      h1 {
+        font-family: "IM Fell English", Georgia, serif;
+        font-size: 2em;
+        font-weight: normal;
+        letter-spacing: 0.05em;
+        margin: 0 0 6px;
+      }
+
+      h3 {
+        font-family: "IM Fell English", Georgia, serif;
+        font-weight: normal;
+        font-style: italic;
+        letter-spacing: 0.08em;
+        margin: 8px 0 4px;
+      }
+
+      p,
+      li,
+      a {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 1.1em;
+        letter-spacing: 0.03em;
+        line-height: 1.6;
+      }
+
+      p {
+        margin: 0 0 6px;
+      }
+
+      a {
+        color: white;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 1.2em;
+      }
+
+      #exercises,
+      #projects {
+        display: block;
+      }
+
+      #work-row {
+        margin-top: 6px;
+      }
+    </style>
   </head>
 
   <body>
-    <!-- this is where my code is-->
-    <div id="container">
-      <pre>
- _       .--'''''''''--.
-     .'      .---.      '.
-    /    .-----------.    \
-   /        .-----.        \
-   |       .-.   .-.       |
-   |      /   \ /   \      |
-    \    | .-. | .-. |    /
-     '-._| | | | | | |_.-'
-         | '-' | '-' |
-          \___/ \___/
-       _.-'  /   \  `-._
-     .' _.--|     |--._ '.
-     ' _...-|     |-..._ '
-            |     |
-            '.___.'
-              | |
-             _| |_
-            /\( )/\
-           /  ` '  \
-          | |     | |
-          '-'     '-'
-          | |     | |
-          | |     | |
-          | |-----| |
-       .`/  |     | |/`.
-       |    |     |    |
-       '._.'| .-. |'._.'
-             \ | /
-             | | |
-             | | |
-             | | |
-            /| | |\
-          .'_| | |_`.
-          `. | | | .'
-       .    /  |  \    .
-      /o`.-'  / \  `-.`o\
-     /o  o\ .'   `. /o  o\
-     `.___.'       `.___.'
-  
-                  _(_)_                          wWWWw   _
-      @@@@       (_)@(_)   vVVVv     _     @@@@  (___) _(_)_
-     @@()@@ wWWWw  (_)\    (___)   _(_)_  @@()@@   Y  (_)@(_)
-      @@@@  (___)     `|/    Y    (_)@(_)  @@@@   \|/   (_)\
-       /      Y       \|    \|/    /(_)    \|      |/      |
-    \ |     \ |/       | / \ | /  \|/       |/    \|      \|/
-jgs \\|//   \\|///  \\\|//\\\|/// \|///  \\\|//  \\|//  \\\|// 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    <div id="page">
+      <div id="night-sky"></div>
 
+      <div id="container">
+        <pre>
+          |
+          |   .
+   `.  *  |     .'
+     `. ._|_* .'  .
+   . * .'   `.  *
+-------|     |-------
+   .  *`.___.' *  .
+      .'  |* `.  *
+    .' *  |  . `.
+        . |
+          |</pre
+        >
 
-  /-_-\
- /  /  \
-/  /    \
-\  \    /
- \__\__/
-    \\
-    -\\    ____
-      \\  /   /
-____   \\/___/
-\   \ -//
- \___\//-
-    -//
-     \\
-     //
-    //-
-  -//
-  //
-  \\
-   \\
+        <!-- about me-->
+        <h1>Lorena A. Cardenas</h1>
+        <p class="desc">
+          Hello! I'm Lorena, a graphic designer who studies at CCA. My first
+          language is Spanish because I was born in Cuba, but I would love to
+          learn more languages as I grow older.
+        </p>
 
-    </pre
-      >
+        <!-- my work -->
+        <div id="work-row">
+          <div id="exercises">
+            <ul>
+              <li><a href="projects/still life coding/index.html">EX 1</a></li>
+              <li>
+                <a href="projects/JS-ADVENTURE-TUTORIAL/index.html">EX 2</a>
+              </li>
+            </ul>
+          </div>
 
-      <!-- about me-->
-      <h1>Lorena A. Cardenas</h1>
-      <p class="desc">
-        Hello! I'm Lorena, a graphic designer who studies at CCA. My first
-        language is Spanish because I was born in Cuba, but I would love to
-        learn more languages as I grow older.
-      </p>
-
-      <!-- my work -->
-      <div id="exercises">
-        <ul>
-          <li><a href="#">EX 1</a></li>
-        </ul>
-      </div>
-
-      <div id="projects">
-        <h3>Projects</h3>
-
-        <ul>
-          <li><a href="#">P1</a></li>
-        </ul>
+          <div id="projects">
+            <h3>Projects</h3>
+            <ul>
+              <li>
+                <a href="projects/Lore's Coded Typeface/index.html"
+                  >CSS Typeface</a
+                >
+              </li>
+              <li>
+                <a href="projects/Escape Room Game/index.html">Site Map</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
+
+    <script>
+      const starShapes = [
+        `          |\n          |   .\n   \`.  *  |     .'\n     \`. ._|_* .'  .\n   . * .'   \`.  *\n-------|     |-------\n   .  *\`.___.\'  *  .\n      .'  |* \`.  *\n    .' *  |  . \`.\n        . |\n          |`,
+        `    .\n   /|\\\n  / | \\\n-+--+--+-\n  \\ | /\n   \\|/\n    '`,
+        `   |\n  \\|/\n---*---\n  /|\\\n   |`,
+        `\\ | /\n \\|/\n--*--\n /|\\\n/ | \\`,
+        `    |\n    *\n  * | *\n*--[*]--*\n  * | *\n    *\n    |`,
+        `  *\n  |\n*-+-*\n  |\n  *`,
+      ];
+
+      const sizes = [4, 5, 6, 7, 8, 9, 11, 13];
+      const sky = document.getElementById("night-sky");
+      const placed = [];
+
+      function overlaps(x, y, w, h) {
+        const margin = 12;
+        for (const p of placed) {
+          if (
+            x < p.x + p.w + margin &&
+            x + w + margin > p.x &&
+            y < p.y + p.h + margin &&
+            y + h + margin > p.y
+          )
+            return true;
+        }
+        return false;
+      }
+
+      const skyH = sky.clientHeight;
+      const skyW = sky.clientWidth;
+      const totalStars = 26;
+      let attempts = 0;
+
+      while (placed.length < totalStars && attempts < 1000) {
+        attempts++;
+        const shape = starShapes[Math.floor(Math.random() * starShapes.length)];
+        const size = sizes[Math.floor(Math.random() * sizes.length)];
+        const lines = shape.split("\n");
+        const cols = Math.max(...lines.map((l) => l.length));
+        const rows = lines.length;
+        const charW = size * 0.6;
+        const charH = size * 1.1;
+        const w = cols * charW;
+        const h = rows * charH;
+
+        const xPx = Math.random() * (skyW - w);
+        const yPx = Math.random() * (skyH - h);
+
+        if (!overlaps(xPx, yPx, w, h)) {
+          placed.push({ x: xPx, y: yPx, w, h });
+          const el = document.createElement("div");
+          el.className = "star";
+          el.textContent = shape;
+          el.style.fontSize = size + "px";
+          el.style.opacity = (0.4 + Math.random() * 0.6).toFixed(2);
+          el.style.left = xPx + "px";
+          el.style.top = yPx + "px";
+          sky.appendChild(el);
+        }
+      }
+    </script>
   </body>
 </html>

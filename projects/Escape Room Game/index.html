@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CCA Escape Room</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="preload" href="assets/images/Mermaid Poster.jpg" as="image" />
+  </head>
+  <body>
+    <!-- Intro overlay -->
+    <div id="intro-overlay">
+      <div id="intro-start-screen">
+        <h1 id="intro-title">deadline</h1>
+        <button id="intro-start-btn">Start</button>
+      </div>
+      <div id="intro-monogram-screen">
+        <img id="intro-monogram" src="assets/images/Monogram.png" alt="" />
+      </div>
+      <div id="intro-typewriter-screen">
+        <p id="intro-typewriter-text"></p>
+        <button id="intro-skip-btn">skip →</button>
+      </div>
+      <div id="intro-wakeup-screen">
+        <img id="intro-wakeup-img" src="assets/images/Waking up 2.jpg" alt="" />
+        <video id="intro-video" playsinline preload="auto" muted>
+          <source src="assets/images/Waking up.mov" type="video/mp4" />
+        </video>
+        <div id="eye-overlay">
+          <div id="eye-pupil"></div>
+        </div>
+        <div id="wakeup-subtitle"></div>
+      </div>
+    </div>
+
+    <!-- Website container -->
+
+    <main>
+      <!-- Scene -->
+      <section id="scene">
+        <div id="game-timer">1:00:00</div>
+        <button id="back-button" type="button" hidden>Back</button>
+        <aside id="inventory">
+          <h2>Inventory</h2>
+          <p id="inventory-empty">No items found</p>
+          <ul id="inventory-list"></ul>
+        </aside>
+        <div class="zone" id="zone1"></div>
+        <div class="zone" id="zone2"></div>
+        <div class="zone" id="zone3" data-clue="3*"></div>
+        <div class="zone" id="bs-zone1"></div>
+        <div class="zone" id="bs-zone2"></div>
+        <div class="zone" id="bs-zone3"></div>
+        <div class="zone" id="bs-zone4" data-clue="*9"></div>
+        <div class="zone" id="exit-door-zone"></div>
+        <div class="zone" id="exit-closeup-zone"></div>
+        <div class="zone" id="lockers-hint2-zone"></div>
+        <div class="zone" id="locker-zone"></div>
+        <div class="zone" id="locker-zone2"></div>
+        <div class="zone" id="locker-zone3"></div>
+        <div class="zone" id="locker-open-zone"></div>
+        <div class="zone" id="locker-hint-posters-zone"></div>
+        <div class="zone" id="mermaid-circle-1">
+          <img class="circle-shape" data-shape="0" src="assets/images/Red Star Shape.png" />
+          <img class="circle-shape" data-shape="1" src="assets/images/Blue Oval Shape.png" />
+          <img class="circle-shape" data-shape="2" src="assets/images/Red Cross Shape.png" />
+          <img class="circle-shape" data-shape="3" src="assets/images/Green Star Shape.png" />
+          <img class="circle-shape" data-shape="4" src="assets/images/Yellow Cross Shape.png" />
+        </div>
+        <div class="zone" id="mermaid-circle-2">
+          <img class="circle-shape" data-shape="0" src="assets/images/Blue Star Shape.png" />
+          <img class="circle-shape" data-shape="1" src="assets/images/Green Oval Shape.png" />
+          <img class="circle-shape" data-shape="2" src="assets/images/Star shape.png" />
+          <img class="circle-shape" data-shape="3" src="assets/images/Oval shape.png" />
+          <img class="circle-shape" data-shape="4" src="assets/images/Dark Blue Cross Shape.png" />
+        </div>
+        <div class="zone" id="mermaid-circle-3">
+          <img class="circle-shape" data-shape="0" src="assets/images/Yellow Oval Shape.png" />
+          <img class="circle-shape" data-shape="1" src="assets/images/Dark Blue Star Shape.png" />
+          <img class="circle-shape" data-shape="2" src="assets/images/Green Cross Shape.png" />
+          <img class="circle-shape" data-shape="3" src="assets/images/Dark Blue Oval Shape.png" />
+          <img class="circle-shape" data-shape="4" src="assets/images/Blue Cross Shape.png" />
+        </div>
+        <div class="zone" id="locker-7326-zone"></div>
+        <div class="zone" id="locker-7324-zone"></div>
+        <div class="zone" id="wood-pieces-back-zone"></div>
+        <div class="zone" id="poster-hint-box-1"></div>
+        <div class="zone" id="poster-hint-box-2"></div>
+        <div class="zone" id="poster-hint-box-3"></div>
+        <div class="zone" id="poster-hint-box-4"></div>
+        <div id="poster-hint-subtitle">These colors might be important for later...</div>
+        <img id="lock-dial-overlay" src="assets/images/Locker Code Rotation.png" alt="" />
+        <div id="lock-dial-indicator"></div>
+        <div id="lock-btn-left">&#9664;</div>
+        <div id="lock-btn-right">&#9654;</div>
+        <div id="lock-set-btn">SET</div>
+        <div id="mermaid-set-btn">SET</div>
+        <div id="lock-debug"></div>
+        <div id="lock-fail-popup">
+          <p>Try Again!</p>
+          <button id="lock-fail-ok">OK</button>
+        </div>
+        <div id="mermaid-fail-popup">
+          <p>Try Again!</p>
+          <button id="mermaid-fail-ok">OK</button>
+        </div>
+        <div id="keypad-grid">
+          <div class="key-btn" data-key="1"></div>
+          <div class="key-btn" data-key="2"></div>
+          <div class="key-btn" data-key="3"></div>
+          <div class="key-btn" data-key="4"></div>
+          <div class="key-btn" data-key="5"></div>
+          <div class="key-btn" data-key="6"></div>
+          <div class="key-btn" data-key="7"></div>
+          <div class="key-btn" data-key="8"></div>
+          <div class="key-btn" data-key="9"></div>
+          <div class="key-btn-empty"></div>
+          <div class="key-btn" data-key="0"></div>
+          <div class="key-btn-empty"></div>
+        </div>
+        <div id="keypad-success">
+          <div id="keypad-success-box">
+            <p>🚪 You are out!</p>
+            <button id="keypad-ok">OK</button>
+          </div>
+        </div>
+        <div id="keypad-fail">
+          <div id="keypad-fail-box">
+            <p>❌ Try again!</p>
+            <button id="keypad-fail-ok">OK</button>
+          </div>
+        </div>
+        <div class="zone" id="tv-zone"></div>
+        <div class="zone" id="tv-trash"></div>
+        <div class="zone" id="trash-clue-zone" data-clue="**"></div>
+        <div class="zone" id="trash-take-zone"></div>
+        <div class="zone" id="trash-numbers-zone"></div>
+        <div class="zone" id="remote-person-zone"></div>
+        <div class="zone" id="remote-back-zone"></div>
+        <div class="zone" id="tv-laptop"></div>
+        <div class="zone" id="tv-remote" data-clue="Remote Control"></div>
+        <div class="zone" id="laptop-zone"></div>
+        <div class="zone" id="open-laptop-zone"></div>
+        <div id="laptop-overlay" hidden>
+          <input id="password-input" type="password" maxlength="4" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+          <div id="password-box">
+            <div id="password-oval"><span id="password-display"></span></div>
+          </div>
+        </div>
+        <!-- Map button -->
+        <button id="map-btn" type="button" title="Map (M)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/>
+            <line x1="9" y1="3" x2="9" y2="18"/>
+            <line x1="15" y1="6" x2="15" y2="21"/>
+          </svg>
+        </button>
+
+        <!-- Map overlay -->
+        <div id="map-overlay" hidden>
+          <div id="map-modal">
+            <img id="map-img" src="assets/images/MAP.png" alt="Map" />
+            <img id="map-star" src="assets/images/Star move.png" alt="" />
+          </div>
+        </div>
+
+        <div class="nav-zone" id="nav-left">&#8592;</div>
+        <div class="nav-zone" id="nav-right">&#8594;</div>
+        <img id="mermaid-layer" src="assets/images/Mermaid Poster.jpg" alt="" />
+        <img id="images" src="assets/images/IMG_7260.jpg" alt="" />
+      </section>
+    </main>
+
+    <h1 id="game-title">DEADLINE</h1>
+
+    <!-- Colophon -->
+    <button id="colophon-btn">?</button>
+    <div id="colophon-overlay">
+      <div id="colophon-modal">
+        <button id="colophon-close">✕</button>
+        <p id="colophon-text">DEADLINE
+———————————————
+
+An escape room experience designed and built
+by Lorena A. Cardenas.
+
+California College of the Arts
+Interaction Design — INT 1
+Spring 2026
+
+———————————————
+
+Built with HTML, CSS, and JavaScript.
+All photography, assets, and puzzles
+created by the author.</p>
+      </div>
+    </div>
+
+    <script src="assets/script.js"></script>
+  </body>
+</html>

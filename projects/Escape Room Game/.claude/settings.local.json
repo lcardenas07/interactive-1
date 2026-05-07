@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sips -s format jpeg \"/Users/lore/Desktop/INT 1/Escape Room Game/assets/images/IMG_7324.HEIC\" --out \"/Users/lore/Desktop/INT 1/Escape Room Game/assets/images/IMG_7324.jpg\")",
+      "Bash(ls \"/Users/lore/Desktop/INT 1/Escape Room Game/assets/images/\"*.jpg)",
+      "Bash(ls \"/Users/lore/Desktop/INT 1/Escape Room Game/assets/images/\"*shape*)",
+      "Bash(ls \"/Users/lore/Desktop/INT 1/Escape Room Game/assets/images/Mermaid Poster Letters\"*)",
+      "Bash(identify \"/Users/lore/Desktop/INT 1/Escape Room Game/assets/images/Mermaid Poster.jpg\")",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/lore/Desktop/INT 1/Escape Room Game/assets/images/Mermaid Poster.jpg\")",
+      "Bash(sips -s format jpeg -s formatOptions 75 -Z 1920 \"/Users/lore/Desktop/INT 1/Escape Room Game/assets/images/Mermaid Poster.jpg\" --out \"/Users/lore/Desktop/INT 1/Escape Room Game/assets/images/Mermaid Poster.jpg\")",
+      "Bash(ls -lh \"/Users/lore/Desktop/INT 1/Escape Room Game/assets/images/\"*.jpg)",
+      "Bash(ls -lh \"/Users/lore/Desktop/INT 1/Escape Room Game/assets/images/\"*shape* \"/Users/lore/Desktop/INT 1/Escape Room Game/assets/images/\"*Shape*)",
+      "Bash(ls -lh \"/Users/lore/Desktop/INT 1/Escape Room Game/assets/images/\"*shape*)",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/lore/Desktop/INT 1/Escape Room Game/assets/images/Posters Hint.jpg\")",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/lore/Desktop/INT 1/Escape Room Game/assets/images/Waking up 2.jpg\" \"/Users/lore/Desktop/INT 1/Escape Room Game/assets/images/IMG_7260.jpg\")",
+      "Bash(xxd)",
+      "Bash(python3 -c ':*)",
+      "Bash(node --check \"/Users/lore/Desktop/INT 1/Escape Room Game/assets/script.js\")",
+      "Bash(node assets/script.js)",
+      "Bash(/usr/local/bin/node --version)",
+      "Bash(/opt/homebrew/bin/node --version)",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/lore/Desktop/INT 1/Escape Room Game/assets/images/IMG_7202.jpg\")",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/lore/Desktop/INT 1/Escape Room Game/assets/images/Lockers Hint 2.jpg\")",
+      "Bash(sips --cropToHeightWidth 1080 1920 --cropOffset 180 0 \"/Users/lore/Desktop/INT 1/Escape Room Game/assets/images/IMG_7202.jpg\")",
+      "Bash(sips --cropToHeightWidth 1080 1920 --cropOffset 180 0 \"/Users/lore/Desktop/INT 1/Escape Room Game/assets/images/Lockers Hint 2.jpg\")",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/lore/Desktop/INT 1/Escape Room Game/assets/images/Exist Door Keypad.jpg\")",
+      "Bash(sips --cropToHeightWidth 1080 1920 --cropOffset 100 0 \"/Users/lore/Desktop/INT 1/Escape Room Game/assets/images/Exist Door Keypad.jpg\")",
+      "WebSearch"
+    ]
+  }
+}
